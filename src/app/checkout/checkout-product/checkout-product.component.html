@@ -1,0 +1,16 @@
+<div class="checkoutProduct">
+  <img src="{{ product.image }}" alt="" />
+  <div class="checkoutProduct__info">
+    <p class="checkoutProduct__title">{{ product.title }}</p>
+    <p class="checkoutProduct__price">
+      <strong>{{ product.price | currency }}</strong>
+    </p>
+    <div
+      class="checkoutProduct__rating"
+      [innerHTML]="product.rating | rating"
+    ></div>
+    <button class="btn btn-info" (click)="removeFromCart()">
+      Remove product
+    </button>
+  </div>
+</div>

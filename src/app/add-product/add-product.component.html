@@ -1,0 +1,74 @@
+<h2 class="product_title">Add Product</h2>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <form (ngSubmit)="onAddProduct(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="">Product Title</label>
+          <input
+            type="text"
+            id="title"
+            class="form-control"
+            name="title"
+            ngModel
+            required
+            #title="ngModel"
+          />
+          <span class="help-block danger" *ngIf="!title.valid && title.touched"
+            >Please enter a product name!</span
+          >
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="">Product Price</label>
+          <input
+            type="number"
+            id="price"
+            class="form-control"
+            name="price"
+            ngModel
+            required
+            #title="ngModel"
+          />
+          <span class="help-block danger" *ngIf="!title.valid && title.touched"
+            >Please enter a product price!</span
+          >
+        </div>
+        <div class="col-sm-6 form-group">
+          <label for="">Product Rating</label>
+          <select
+            type="number"
+            id="rating"
+            class="form-control"
+            name="rating"
+            [ngModel]="defaultRating"
+          >
+            <option *ngFor="let i of [1, 2, 3, 4, 5]" [ngValue]="i">
+              {{ i }}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-12 form-group">
+          <label for="">Image</label>
+          <input
+            type="string"
+            id="image"
+            class="form-control"
+            name="image"
+            [ngModel]="defaultImage"
+            required
+            #image="ngModel"
+          />
+          <span class="help-block danger" *ngIf="!title.valid && title.touched"
+            >Please enter a enter/select a product image!</span
+          >
+        </div>
+        <div class="col-sm-12">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+            Add Product
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

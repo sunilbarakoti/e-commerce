@@ -1,0 +1,22 @@
+<div class="card-deck">
+  <div class="card product">
+    <img src="{{ product.image }}" alt="Product Image" class="card-img-top" />
+    <div class="card-body">
+      <div class="product__desc">
+        <h6 class="card-title">{{ product.title }}</h6>
+        <p class="card-text">
+          <strong>{{ product.price | currency }}</strong>
+        </p>
+        <p
+          class="card-text product__rating"
+          [innerHTML]="product.rating | rating"
+        ></p>
+      </div>
+      <div class="col text-center">
+        <button class="btn btn-info" (click)="addToBasket()">
+          Add to basket
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

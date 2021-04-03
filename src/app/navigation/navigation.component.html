@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a routerLink="/" class="navbar-brand">Home</a>
+  <button type="button" class="navbar-toggler" (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="navbar-collapse justify-content-between"
+    [class.collapse]="collapsed"
+    (window:resize)="collapsed = true"
+  >
+    <ul class="navbar-nav">
+      <li class="nav-link" routerLinkActive="active">
+        <a class="nav-link" routerLink="/addproduct">Add Product</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-sm-2">
+      <li class="nav-link" routerLinkActive="active">
+        <a class="nav-link" routerLink="/checkout">Checkout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,13 @@
+<h2 class="checkout__title">Your Shopping Basket</h2>
+<div class="row">
+  <div class="col-md-10">
+    <app-checkout-product
+      class="checkoutProduct"
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-checkout-product>
+  </div>
+  <div class="col-md-2">
+    <app-subtotal></app-subtotal>
+  </div>
+</div>
